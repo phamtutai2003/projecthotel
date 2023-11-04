@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+<div class="col-md-12 properties-single ftco-animate mb-5 mt-4">
+    <h4 class="mb-4">Review &amp; Ratings</h4>
+    <form>  <div class="rating">
+        <span class="rating-label">Đánh giá: </span>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+    </div>
+
+        <h3>Viết bình luận:</h3>
+        <textarea id="commentInput" placeholder="Viết bình luận"></textarea>
+        <button id="submitReviewButton">Đánh giá & Bình luận</button>
+    </form>
+
+    <div id="userReview">
+        <h4>Danh sách đánh giá:</h4>
+        <ul th:each="comment : ${comments}">
+            <li th:text="${comment.user.image}"></li>
+            <li th:text="${comment.user.username}"></li>
+            <li th:text="${comment.comment}"></li>
+
+        </ul>
+    </div>
+</body>
+
+</html>
